@@ -248,7 +248,7 @@ def process_spectrum(field):
 
     field : photon field as defined in photonField.py
     """
-    gamma = 10**(6.05 + 0.1 * np.arange(70))
+    gamma = 10**(1.05 + 0.1 * np.arange(100))
     Ee = 10**(7 + 0.1 * np.arange(170)) * eV
     spec = electronSpectrum(gamma, Ee, field) * eV * cm   # [1/J/m] -> [1/eV/cm]
     # Energy conservation requires Ee < Ep. The static-nucleus formula (no recoil) still reaches Ee ~ 2 omega gamma
@@ -267,7 +267,7 @@ def process(field):
 
         field : photon field as defined in photonField.py
     """ 
-    gamma = np.logspace(6, 14, 161)  # tabulated Lorentz factors
+    gamma = np.logspace(1, 11, 161)  # tabulated Lorentz factors
 
     rate = lossRate(gamma, field)[0]
     s = (rate > 1e-12)  # truncate if loss rate is < 10^-12 / Mpc

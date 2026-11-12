@@ -7,7 +7,7 @@ from units import eV
 
 cdir = os.path.split(__file__)[0]
 
-lgamma = np.linspace(6, 16, 251)  # tabulated Lorentz factors
+lgamma = np.linspace(1, 11, 251)  # tabulated Lorentz factors
 gamma = 10**lgamma
 
 # ----------------------------------------------------
